@@ -32,11 +32,6 @@ class GameViewModel : ViewModel() {
 
     private var usedWords : MutableSet<String> = mutableSetOf()
 
-    private var _count = 0
-
-    val count : Int
-        get() = _count
-
     var userGuess by mutableStateOf("")
         private set
 
@@ -89,8 +84,6 @@ class GameViewModel : ViewModel() {
         }
 
         updateUserGuess("")
-        Log.d("GameViewModel", _uiState.value.isGuessedWordWrong.toString()
-        )
     }
 
     fun updateGameState(updatedScore : Int){
